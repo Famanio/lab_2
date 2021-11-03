@@ -44,6 +44,20 @@ int main()
 		}
 	}
 	array1D.printFormated();
+	array2D--;
+	--array2D;
+	array2D.printFormated();
+	array2D++;
+	++array2D;
+	array2D.printFormated();
+	array1D.printFormated();
+	array1D--;
+	--array1D;
+	array1D.printFormated();
+	array1D++;
+	++array1D;
+	array1D.printFormated();
+
 
 	std::cout << "Task 2" << "\n";
 	/*Написать класс Fraction для представления обыкновенных дробей(как отношения двух целых чисел x / y).
@@ -57,15 +71,22 @@ int main()
 
 	Fraction a(1, 2);
 	Fraction b(2, 3);
-	Fraction c = a * b;
+	Fraction c = a + b;
+	Fraction d = a - b;
+	Fraction e = a * b;
+	Fraction f = a / b;
 	a.printFraction();
 	b.printFraction();
 	c.printFraction();
+	d.printFraction();
+	e.printFraction();
+	f.printFraction();
+	std::cout << "\n";
 	char test1[] = "0.25";
 	double test2 = 0.25;
 	Fraction::printAsFraction(test1);
 	Fraction::printAsFraction(test2);
-	std::cout << a.getTotalFractions() << "\n";
+	std::cout << "Total fractions: " << a.getTotalFractions() << "\n";
 
 	std::cout << "Task 3" << "\n";
 	/*Написать собственный класс, в соответствии с вариантом.Продемонстрировать в коде инкапсуляцию данных, применение конструкторов без параметров и с параметрами

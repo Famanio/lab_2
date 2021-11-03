@@ -69,5 +69,5 @@ void Vector::printFormated()
 	{
 		std::cout << vector[i] << " " << std::setw(14);
 	}
-	std::cout << "\n";
+	std::cout << "\n" << "\n";
 }	

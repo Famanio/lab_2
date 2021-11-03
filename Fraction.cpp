@@ -81,7 +81,18 @@ void Fraction::printAsFraction(char* decimal_fraction)
 
 void Fraction::printFraction()
 {
-	std::cout << n_ << '/' << m_ << std::endl;
+	if (n_ < 0)
+	{
+		std::cout << "-" << n_ * -1 << '/' << m_ << std::endl;
+	}
+	if (m_ < 0) 
+	{
+		std::cout << "-" << n_ << '/' << m_ * -1 << std::endl;
+	}
+	else
+	{
+		std::cout << n_ << '/' << m_ << std::endl;
+	}
 }
 
 Fraction::Fraction()
@@ -139,13 +150,13 @@ Fraction Fraction::operator +(const Fraction& term)
 	}
 	else 
 	{
-		int commonMult = aN * bN;
+		int commonMult = aM * bM;
 		aM *= bN;
 		bM *= aN;
 		int totalM = aM + bM;
 		int mult = gcd(totalM, commonMult);
-		out.setN(commonMult / mult);
-		out.setM(totalM / mult);
+		out.setN(totalM / mult);
+		out.setM(commonMult / mult);
 	}
 	return out;
 }
@@ -164,13 +175,13 @@ Fraction Fraction::operator -(const Fraction& subtrahend)
 	}
 	else 
 	{
-		int commonMult = aN * bN;
+		int commonMult = aM * bM;
 		aM *= bN;
 		bM *= aN;
-		int totalM = aM - bM;
+		int totalM = aN - bN;
 		int mult = gcd(totalM, commonMult);
-		out.setN(commonMult / mult);
-		out.setM(totalM / mult);
+		out.setN(totalM / mult);
+		out.setM(commonMult / mult);
 	}
 	return out;
 }
